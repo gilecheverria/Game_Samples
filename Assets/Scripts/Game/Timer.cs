@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     // Variables visible from Unity
     [SerializeField] int timer;
     [SerializeField] Text textTime;
+    [SerializeField] Text textMessage;
 
     DropBalls dropper;
 
@@ -31,5 +32,6 @@ public class Timer : MonoBehaviour
     {
         dropper.StopBalls();
         CancelInvoke();
+        textMessage.text = "GAME OVER\nPress 'R' key to restart";
     }
 }
