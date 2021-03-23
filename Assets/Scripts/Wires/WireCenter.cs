@@ -55,11 +55,14 @@ public class WireCenter : MonoBehaviour
     // Light on or off depending on power
     void SetSprite()
     {
+        spriteRenderer.sprite = (powerOn ? onSprite : offSprite);
+        /*
         if (powerOn) {
             spriteRenderer.sprite = onSprite;
         }
         else {
             spriteRenderer.sprite = offSprite;
         }
+        */
     }
 }
