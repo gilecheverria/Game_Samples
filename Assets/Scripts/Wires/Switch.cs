@@ -1,5 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Toggle a switch on and off
+ *
+ * Gilberto Echeverria
+ * 2021-03-23
+ */
+
 using UnityEngine;
 
 public class Switch : MonoBehaviour
@@ -16,16 +21,10 @@ public class Switch : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0)) {
-            // Toggle the switch
+            // Toggle the switch when pressing the Left Mouse Button
             powerOn = !powerOn;
             if (powerOn) {
                 spriteRenderer.sprite = onSprite;

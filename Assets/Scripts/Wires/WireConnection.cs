@@ -1,5 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Script on the colliders of a wire,
+ * detects when in contact with another object and informs the parent
+ *
+ * Gilberto Echeverria
+ * 2021-03-23
+ */
+
 using UnityEngine;
 
 public class WireConnection : MonoBehaviour
@@ -12,6 +18,7 @@ public class WireConnection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get a reference to the script on the parent
         wire = transform.parent.GetComponent<WireCenter>();
     }
 
@@ -31,6 +38,7 @@ public class WireConnection : MonoBehaviour
         UpdateConnection(who);
     }
 
+    // Update the values on the parent
     void UpdateConnection(GameObject other) {
         if (tag == "Left") {
             wire.myLeft = other;

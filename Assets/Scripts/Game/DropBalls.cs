@@ -24,10 +24,12 @@ public class DropBalls : MonoBehaviour
 
     void NewBall()
     {
+        // Generate the new random position based on the settings
         position = new Vector3(Random.Range(-limits.x, limits.x), limits.y, 0);
         Instantiate(ball, position, Quaternion.identity);
     }
 
+    // This method will stop the generation of new balls
     public void StopBalls()
     {
         CancelInvoke();

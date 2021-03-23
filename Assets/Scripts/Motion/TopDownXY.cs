@@ -57,6 +57,5 @@ public class TopDownXY : MonoBehaviour
             anim.SetInteger("Direction", (int)Direction.West);
             //print("Moving West: " + (int)Direction.West);
         }
-
     }
 }

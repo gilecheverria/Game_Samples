@@ -1,5 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+ * Count down from a given amount of seconds
+ * Stop the game when the time runs out
+ *
+ * Gilberto Echeverria
+ * 23/03/2021
+ */
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +16,7 @@ public class Timer : MonoBehaviour
     [SerializeField] Text textTime;
     [SerializeField] Text textMessage;
 
+    // Reference to another script
     DropBalls dropper;
 
     void Start()
@@ -30,6 +37,7 @@ public class Timer : MonoBehaviour
 
     void GameOver()
     {
+        // Stop the invokes in this and the other script
         dropper.StopBalls();
         CancelInvoke();
         textMessage.text = "GAME OVER\nPress 'R' key to restart";
