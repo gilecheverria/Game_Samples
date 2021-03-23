@@ -2,7 +2,7 @@
 Generate new balls at random horizontal positions
 
 Gilberto Echeverria
-18/02/2021
+2021-02-18
 */
 
 using UnityEngine;

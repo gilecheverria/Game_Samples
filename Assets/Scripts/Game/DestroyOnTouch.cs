@@ -3,7 +3,7 @@
  * It will then destroy any other object that enters the trigger
  *
  * Gilberto Echeverria
- * 23/03/2021
+ * 2021-03-23
  */
 
 using UnityEngine;

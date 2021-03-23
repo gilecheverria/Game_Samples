@@ -2,7 +2,7 @@
 Add points every time a ball passess through the net
 
 Gilberto Echeverria
-26/02/2021
+2021-02-26
 */
 
 using UnityEngine;

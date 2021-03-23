@@ -2,7 +2,7 @@
 Reload a scene when pressing a button
 
 Gilberto Echeverria
-18/02/2021
+2021-02-18
 */
 
 using UnityEngine;

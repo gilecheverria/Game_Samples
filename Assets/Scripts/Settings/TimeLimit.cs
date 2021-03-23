@@ -2,7 +2,7 @@
 Adjust the time limit and store it in PlayerPrefs
 
 Gilberto Echeverria
-23/03/2021
+2021-03-23
 */
 
 using UnityEngine;

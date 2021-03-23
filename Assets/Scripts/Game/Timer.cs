@@ -3,7 +3,7 @@
  * Stop the game when the time runs out
  *
  * Gilberto Echeverria
- * 23/03/2021
+ * 2021-03-23
  */
 
 using UnityEngine;

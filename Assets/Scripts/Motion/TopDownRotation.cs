@@ -4,7 +4,7 @@ The character should have a Rigidbody
 The movement is along the vertical axis, and the character can rotate
 
 Gilberto Echeverria
-02/03/2021
+2021-03-02
 */
 
 using UnityEngine;
