@@ -12,15 +12,20 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     // Variables visible from Unity
-    [SerializeField] int timer;
     [SerializeField] Text textTime;
     [SerializeField] Text textMessage;
 
     // Reference to another script
     DropBalls dropper;
 
+    int timer;
+
     void Start()
     {
+        // Get the value from another scene
+        timer = PlayerPrefs.GetInt("TimeLimit");
+        // Initialize the display text
+        textTime.text = "Time: " + timer;
         dropper = GetComponent<DropBalls>();
         InvokeRepeating("CountDown", 1, 1);
     }

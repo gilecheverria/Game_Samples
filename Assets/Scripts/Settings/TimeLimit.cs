@@ -18,6 +18,7 @@ public class TimeLimit : MonoBehaviour
     void Start()
     {
         // Recover a default value from player prefs
+        timeLimit = PlayerPrefs.GetInt("TimeLimit", defaultTime);
         timeField.text = "" + timeLimit;
     }
 
@@ -28,7 +29,7 @@ public class TimeLimit : MonoBehaviour
         // Convert the number into a string to be able to display it
         timeField.text = "" + timeLimit;
         // Store the new value in the player prefs
-
+        PlayerPrefs.SetInt("TimeLimit", timeLimit);
     }
     
     // Callback when directly editing the input field
@@ -38,6 +39,7 @@ public class TimeLimit : MonoBehaviour
         if (int.TryParse(timeField.text, out timeLimit))
         {
             // Store the new value in the player prefs
+            PlayerPrefs.SetInt("TimeLimit", timeLimit);
         }
         else
         {
