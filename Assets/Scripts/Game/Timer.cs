@@ -45,6 +45,6 @@ public class Timer : MonoBehaviour
         // Stop the invokes in this and the other script
         dropper.StopBalls();
         CancelInvoke();
-        textMessage.text = "GAME OVER\nPress 'R' key to restart";
+        textMessage.text = "GAME OVER\nPress 'R' key to restart\nPress 'M' to go back to the menu";
     }
 }

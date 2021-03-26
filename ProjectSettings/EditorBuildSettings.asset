@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: 7973b5c60fd934a39ba9860209d3040f
+    path: Assets/Scenes/Title.unity
+    guid: e394643840d1ff3fb8bfbd241f282a23
   - enabled: 1
     path: Assets/Scenes/Physics2D.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 7973b5c60fd934a39ba9860209d3040f
+  - enabled: 1
+    path: Assets/Scenes/LoadFileData.unity
+    guid: 7d7a06910b2e64ed8b93ed4014dab955
+  - enabled: 1
+    path: Assets/Scenes/TopDown.unity
+    guid: d2bf6a76ab5c5a5a195ff71ff4846bb5
+  - enabled: 1
+    path: Assets/Scenes/Wires.unity
+    guid: e57791e71d0c7fca49f8172244dc9bd9
   m_configObjects: {}

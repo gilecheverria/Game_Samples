@@ -17,6 +17,10 @@ public class GameReset : MonoBehaviour
         {
             SceneManager.LoadScene("Physics2D");
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
 
 
