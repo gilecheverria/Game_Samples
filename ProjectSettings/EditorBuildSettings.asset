@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wires.unity
     guid: e57791e71d0c7fca49f8172244dc9bd9
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 882e846324e99d3d3bae703badfac00a
   m_configObjects: {}
