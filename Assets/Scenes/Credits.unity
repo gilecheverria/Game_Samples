@@ -391,7 +391,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: -20.000004, y: 600}
+  m_SizeDelta: {x: -40, y: 600}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &962827657
 MonoBehaviour:
@@ -430,6 +430,8 @@ MonoBehaviour:
     https://opengameart.org/content/hero-spritesheets-ars-notoria
 
     https://www.vhv.rs/viewpic/hobbmxx_transparent-mega-man-sprite-png-sprite-sheet-megaman/
+
+    https://opengameart.org/content/3-parallax-backgrounds
 
 
     Sounds:
