@@ -50,14 +50,13 @@ public class ParallaxController : MonoBehaviour
         for (int i=0; i<copiesNeeded; i++) {
             GameObject instance = Instantiate(clone);
             instance.transform.parent = obj.transform;
-            // Move the images a bit back so that they always cover the full screen space
+            // Move the images a bit left so that they always cover the full screen space
             instance.transform.position = new Vector3(imageWidth * (i - 0.5f), obj.transform.position.y, obj.transform.position.z);
-            instance.name = obj.name + i;
+            instance.name = obj.name + "-" + i;
         }
         // Cleanup
         Destroy(clone);
         Destroy(obj.GetComponent<SpriteRenderer>());
-        //Destroy(obj.GetComponent<Collider2D>());
     }
 
     // Move the child images when they are no longer visible
