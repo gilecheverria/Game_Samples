@@ -15,9 +15,9 @@ public class CharacterControl : MonoBehaviour
     [SerializeField] bool grounded;
 
     [SerializeField] GameObject highSlash;
-    [SerializeField] Vector3 highOffset;
+    [SerializeField] Transform highOffset;
     [SerializeField] GameObject lowSlash;
-    [SerializeField] Vector3 lowOffset;
+    [SerializeField] Transform lowOffset;
 
     Rigidbody2D rb;
     Vector3 move;
@@ -97,10 +97,10 @@ public class CharacterControl : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) {
             // Instantiate the slash object
             if (crouching) {
-                GameObject slash = Instantiate(lowSlash, transform.position + lowOffset, Quaternion.identity);
+                GameObject slash = Instantiate(lowSlash, lowOffset.position, lowOffset.rotation);
                 slash.transform.parent = transform;
             } else {
-                GameObject slash = Instantiate(highSlash, transform.position + highOffset, Quaternion.identity);
+                GameObject slash = Instantiate(highSlash, highOffset.position, highOffset.rotation);
                 slash.transform.parent = transform;
             }
             foreach (Animator animator in animators) {
