@@ -11,9 +11,9 @@ using UnityEngine.UI;
 public class TimeLimit : MonoBehaviour
 {
     [SerializeField] InputField timeField;
-    [SerializeField] int timeLimit = 0;
+    [SerializeField] public int timeLimit = 0;
 
-    int defaultTime = 30;
+    int defaultTime = 5;
 
     void Start()
     {

@@ -22,6 +22,4 @@ public class GameReset : MonoBehaviour
             SceneManager.LoadScene("Title");
         }
     }
-
-
 }

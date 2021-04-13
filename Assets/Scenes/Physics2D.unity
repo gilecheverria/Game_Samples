@@ -1094,6 +1094,7 @@ MonoBehaviour:
   textScore: {fileID: 2092624604}
   asScore: {fileID: 1398151238}
   asBounce: {fileID: 1398151240}
+  score: 0
 --- !u!82 &1398151240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1380,6 +1381,7 @@ GameObject:
   - component: {fileID: 1728366357}
   - component: {fileID: 1728366359}
   - component: {fileID: 1728366360}
+  - component: {fileID: 1728366362}
   - component: {fileID: 1728366361}
   m_Layer: 0
   m_Name: GameController
@@ -1429,6 +1431,7 @@ MonoBehaviour:
   ball: {fileID: 5598298560859188422, guid: 41a60ae332443acb69706c8396db4701, type: 3}
   limits: {x: 3, y: 5.5}
   delay: 0.5
+  numberBalls: 0
 --- !u!114 &1728366360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,9 +1444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3252ee427092fb067bc9f2ad23d7b9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 30
   textTime: {fileID: 1232354992}
   textMessage: {fileID: 27677249}
+  timeLimit: 0
 --- !u!82 &1728366361
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1540,6 +1543,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1728366362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728366356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05436c0ab9ea7464a9b4ee2c4a13be73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apiURL: http://localhost:5000/api/gamedata
+  pointScript: {fileID: 1398151239}
 --- !u!1 &1899181374
 GameObject:
   m_ObjectHideFlags: 0

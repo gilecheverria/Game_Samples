@@ -18,7 +18,11 @@ public class Timer : MonoBehaviour
     // Reference to another script
     DropBalls dropper;
 
+    // This script is needed to start a coroutine that uploads the game data to the api.
+    wwwFormGameData sendGameData;
+
     int timer;
+    public int timeLimit;
 
     void Start()
     {
@@ -26,8 +30,11 @@ public class Timer : MonoBehaviour
         timer = PlayerPrefs.GetInt("TimeLimit");
         // Initialize the display text
         textTime.text = "Time: " + timer;
+        timeLimit = timer;
         dropper = GetComponent<DropBalls>();
         InvokeRepeating("CountDown", 1, 1);
+
+        sendGameData = GetComponent<wwwFormGameData>();
     }
 
     void CountDown()
@@ -46,5 +53,8 @@ public class Timer : MonoBehaviour
         dropper.StopBalls();
         CancelInvoke();
         textMessage.text = "GAME OVER\nPress 'R' key to restart\nPress 'M' to go back to the menu";
+
+        // After the game ends, we make a request to the api through the uploadData method.
+        StartCoroutine(sendGameData.uploadData());
     }
 }

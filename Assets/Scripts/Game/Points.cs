@@ -15,7 +15,8 @@ public class Points : MonoBehaviour
     [SerializeField] AudioSource asScore;
     [SerializeField] AudioSource asBounce;
 
-    int score = 0;
+    // Made score public so that it could be accessed from the wwwFormGameData script
+    public int score = 0;
 
     // Start is called before the first frame update
     void Start()

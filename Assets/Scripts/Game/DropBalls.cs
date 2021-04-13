@@ -13,6 +13,9 @@ public class DropBalls : MonoBehaviour
     [SerializeField] Vector2 limits;
     [SerializeField] float delay;
 
+    // Added the variable to keep track of the number of spawned balls.
+    public float numberBalls = 0f;
+
     Vector3 position;
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class DropBalls : MonoBehaviour
         // Generate the new random position based on the settings
         position = new Vector3(Random.Range(-limits.x, limits.x), limits.y, 0);
         Instantiate(ball, position, Quaternion.identity);
+        numberBalls ++;
     }
 
     // This method will stop the generation of new balls
