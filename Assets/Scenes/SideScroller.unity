@@ -213,7 +213,8 @@ GameObject:
   - component: {fileID: 112715158}
   - component: {fileID: 112715157}
   - component: {fileID: 112715156}
-  m_Layer: 0
+  - component: {fileID: 112715159}
+  m_Layer: 8
   m_Name: Rockman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,6 +273,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112715159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112715155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674acc5c8436dee1e9900b520e173e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 5
 --- !u!1 &122720051
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +510,36 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &341400246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341400247}
+  m_Layer: 0
+  m_Name: HighPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &341400247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341400246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 642989451}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390873621
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 642989451}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &405707831
 GameObject:
@@ -860,7 +904,9 @@ Transform:
   - {fileID: 719432166}
   - {fileID: 432055179}
   - {fileID: 1024785298}
+  - {fileID: 341400247}
   - {fileID: 390873622}
+  - {fileID: 738105053}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -879,12 +925,20 @@ MonoBehaviour:
   speed: 8
   jumpForce: {x: 0, y: 600}
   grounded: 1
+  damage: 1
   highSlash: {fileID: 8382692726633849537, guid: 9d166082dd6344019a9a76f9276b1e4a,
     type: 3}
   highOffset: {fileID: 1024785298}
+  highPoint: {fileID: 341400247}
+  highRange: 0.4
   lowSlash: {fileID: 6792377320002290536, guid: e2199c7cb1d5e95a098d7ff4944fb680,
     type: 3}
   lowOffset: {fileID: 390873622}
+  lowPoint: {fileID: 738105053}
+  lowRange: 0.4
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &719432165
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1041,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &738105052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738105053}
+  m_Layer: 0
+  m_Name: LowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &738105053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738105052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 642989451}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777856708
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,15 +9,33 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] float maxHP;
+
+    float currentHP;
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHP = maxHP;
+        animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        
+        currentHP -= damage;
+
+        animator.SetTrigger("Hit");
+
+        if (currentHP <= 0) {
+            animator.SetBool("Dead", true);
+
+            // Stop the character from falling through the ground
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            // Disable the collider for this object
+            GetComponent<Collider2D>().enabled = false;
+            // Disable this script
+            this.enabled = false;
+        }
     }
 }

@@ -4,8 +4,7 @@ Simple motion for a character in a side scrolling game
 Gilberto Echeverria
 2021-04-04
 */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class CharacterControl : MonoBehaviour
@@ -14,10 +13,18 @@ public class CharacterControl : MonoBehaviour
     [SerializeField] Vector2 jumpForce;
     [SerializeField] bool grounded;
 
+    [SerializeField] float damage;
+    
     [SerializeField] GameObject highSlash;
     [SerializeField] Transform highOffset;
+    [SerializeField] Transform highPoint;
+    [SerializeField] float highRange;
     [SerializeField] GameObject lowSlash;
     [SerializeField] Transform lowOffset;
+    [SerializeField] Transform lowPoint;
+    [SerializeField] float lowRange;
+
+    [SerializeField] LayerMask enemyLayers;
 
     Rigidbody2D rb;
     Vector3 move;
@@ -94,17 +101,29 @@ public class CharacterControl : MonoBehaviour
 
     void Attack()
     {
+        Collider2D[] enemiesHit;
+
         if (Input.GetButtonDown("Fire1")) {
             // Instantiate the slash object
             if (crouching) {
                 GameObject slash = Instantiate(lowSlash, lowOffset.position, lowOffset.rotation);
                 slash.transform.parent = transform;
+                // Detect enemies hit
+                enemiesHit = Physics2D.OverlapCircleAll(lowPoint.position, lowRange, enemyLayers);
             } else {
                 GameObject slash = Instantiate(highSlash, highOffset.position, highOffset.rotation);
                 slash.transform.parent = transform;
+                // Detect enemies hit
+                enemiesHit = Physics2D.OverlapCircleAll(highPoint.position, highRange, enemyLayers);
             }
+            // Animate all child objects
             foreach (Animator animator in animators) {
                 animator.SetTrigger("Punch");
+            }
+            // Detect enemies hit
+            foreach (Collider2D enemy in enemiesHit) {
+                //print("Hit enemy: " + enemy.name);
+                enemy.GetComponent<Health>().TakeDamage(damage);
             }
         }
     }
@@ -118,6 +137,14 @@ public class CharacterControl : MonoBehaviour
                 }
             }
             grounded = true;
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (highPoint != null) {
+            Gizmos.DrawWireSphere(highPoint.position, highRange);
+            Gizmos.DrawWireSphere(lowPoint.position, lowRange);
         }
     }
 }
