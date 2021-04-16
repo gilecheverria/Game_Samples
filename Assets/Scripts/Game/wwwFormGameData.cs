@@ -7,8 +7,8 @@ public class wwwFormGameData : MonoBehaviour
     // The route for the api that inserts data.
     [SerializeField] string apiURL = "http://localhost:5000/api/gamedata";
     // References for the scripts that hold the information that is going to be inserted.
-    DropBalls ballScript = null;
     [SerializeField] Points pointScript = null;
+    DropBalls ballScript = null;
     Timer timeScript = null;
 
     private void Start() 
