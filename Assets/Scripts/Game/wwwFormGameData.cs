@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
 
-public class wwwFormGameData : MonoBehaviour 
+public class wwwFormGameData : MonoBehaviour
 {
     // The route for the api that inserts data.
     [SerializeField] string apiURL = "http://localhost:5000/api/gamedata";
@@ -11,7 +11,7 @@ public class wwwFormGameData : MonoBehaviour
     DropBalls ballScript = null;
     Timer timeScript = null;
 
-    private void Start() 
+    private void Start()
     {
         ballScript = GetComponent<DropBalls>();
         timeScript = GetComponent<Timer>();
@@ -20,7 +20,7 @@ public class wwwFormGameData : MonoBehaviour
     // We need to start a coroutine that calls the request
     public IEnumerator uploadData()
     {
-        // Unity sends a form, just as a html form. 
+        // Unity sends a form, just as a html form.
         WWWForm form = new WWWForm();
 
         // We need to create the form first, by manually adding fields. These fields match the names of the columns in the database.
@@ -39,7 +39,10 @@ public class wwwFormGameData : MonoBehaviour
             yield return request.SendWebRequest();
 
             // If there are no errors...
+            // This line works for Unity 2019
             if (request.isNetworkError || request.isHttpError)
+            // Unity 2020 will likely have to use
+            //if (request.error != null)
             {
                 Debug.Log(request.error);
             }

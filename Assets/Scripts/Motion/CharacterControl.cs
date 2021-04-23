@@ -31,6 +31,7 @@ public class CharacterControl : MonoBehaviour
     Animator[] animators;
     bool facingRight = true;
     bool crouching = false;
+    bool running = false;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,9 @@ public class CharacterControl : MonoBehaviour
         move.y = rb.velocity.y;
 
         rb.velocity = move;
+
+        // Detect if the character is in motion
+        running = (move.x != 0);
 
         // Flip the character when changing direction
         if (move.x < 0 && facingRight) {
@@ -116,9 +120,12 @@ public class CharacterControl : MonoBehaviour
                 // Detect enemies hit
                 enemiesHit = Physics2D.OverlapCircleAll(highPoint.position, highRange, enemyLayers);
             }
-            // Animate all child objects
-            foreach (Animator animator in animators) {
-                animator.SetTrigger("Punch");
+            // Trigger the animation unless the character is running on the ground
+            if (!running || crouching || !grounded) {
+                // Animate all child objects
+                foreach (Animator animator in animators) {
+                    animator.SetTrigger("Punch");
+                }
             }
             // Detect enemies hit
             foreach (Collider2D enemy in enemiesHit) {

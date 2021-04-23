@@ -37,7 +37,8 @@ public class TopDownXY : MonoBehaviour
         move.y = Input.GetAxis("Vertical");
 
         // Apply the movement directly as velocity
-        rb.velocity = move * speed;
+        // Normalize the vector to keep constant speed on diagonals
+        rb.velocity = move.normalized * speed;
 
         // Activate only one of the animations
         // The priority is given by the order of the if's
