@@ -5,10 +5,13 @@ References for using the mouse:
 https://gamedevbeginner.com/how-to-convert-the-mouse-position-to-world-space-in-unity-2d-3d/#screen_to_world_2d
 
 Gilberto Echeverria
-2022-0-18
+2022-05-04
 */
 
 using UnityEngine;
+
+// Make sure the object has this component
+[RequireComponent(typeof(LineRenderer))]
 
 public class DragMouse : MonoBehaviour
 {
@@ -39,8 +42,10 @@ public class DragMouse : MonoBehaviour
             endPos = Camera.main.ScreenToWorldPoint(mousePos);
             startPos.z = 0;
             endPos.z = 0;
+            //Vector3 snapPos = new Vector3(Mathf.Round(endPos.x), Mathf.Round(endPos.y), Mathf.Round(endPos.z));
             lineRenderer.SetPosition(0, startPos);
             lineRenderer.SetPosition(1, endPos);
+            //lineRenderer.SetPosition(1, snapPos);
         }
 
         if (Input.GetMouseButtonUp(0)) {
