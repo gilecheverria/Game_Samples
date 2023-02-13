@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     // Variables visible from Unity
     [SerializeField] Text textTime;
     [SerializeField] Text textMessage;
+    [SerializeField] GameObject gameOverPanel;
 
     // Reference to another script
     DropBalls dropper;
@@ -52,9 +53,10 @@ public class Timer : MonoBehaviour
         // Stop the invokes in this and the other script
         dropper.StopBalls();
         CancelInvoke();
-        textMessage.text = "GAME OVER\nPress 'R' key to restart\nPress 'M' to go back to the menu";
+        gameOverPanel.SetActive(true);
 
-        // After the game ends, we make a request to the api through the uploadData method.
+        // After the game ends, we make a request to the api through the
+        // uploadData method.
         StartCoroutine(sendGameData.uploadData());
     }
 }

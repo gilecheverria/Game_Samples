@@ -87,7 +87,7 @@ TextureImporter:
       213: -2262417619733105726
     second: robe07-spritemap_27
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -107,6 +107,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -115,9 +117,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -138,10 +140,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -169,6 +175,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -780,6 +798,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      robe07-spritemap_13: 9117657720818302601
+      robe07-spritemap_0: -1956291055376325537
+      robe07-spritemap_5: -5200373581598578383
+      robe07-spritemap_22: -7780343141442595947
+      robe07-spritemap_17: 690945198306828339
+      robe07-spritemap_18: -7311731986517512545
+      robe07-spritemap_8: 5466580781492637843
+      robe07-spritemap_9: -7392446407272417965
+      robe07-spritemap_27: -2262417619733105726
+      robe07-spritemap_21: -8368904917862587732
+      robe07-spritemap_24: 4828372712637787513
+      robe07-spritemap_19: 66934810380408642
+      robe07-spritemap_10: -466690720679406060
+      robe07-spritemap_20: -6414495362754587170
+      robe07-spritemap_2: -9066434950580445762
+      robe07-spritemap_6: -7420672729469621992
+      robe07-spritemap_23: 6089131013826577758
+      robe07-spritemap_7: 9092174580810683884
+      robe07-spritemap_14: -1624788640155230203
+      robe07-spritemap_12: 2832808179864201439
+      robe07-spritemap_25: -3143427389362656726
+      robe07-spritemap_1: -1647320180986546164
+      robe07-spritemap_15: -8884264502668033159
+      robe07-spritemap_16: 7048530943987234282
+      robe07-spritemap_4: 1842046758809355631
+      robe07-spritemap_3: -1901690563631159723
+      robe07-spritemap_11: -8507033791201444327
+      robe07-spritemap_26: 5440791278447842596
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
