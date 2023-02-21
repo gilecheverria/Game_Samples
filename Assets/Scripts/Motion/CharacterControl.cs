@@ -110,15 +110,21 @@ public class CharacterControl : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) {
             // Instantiate the slash object
             if (crouching) {
-                GameObject slash = Instantiate(lowSlash, lowOffset.position, lowOffset.rotation);
+                GameObject slash = Instantiate(lowSlash,
+                                               lowOffset.position,
+                                               lowOffset.rotation);
                 slash.transform.parent = transform;
                 // Detect enemies hit
-                enemiesHit = Physics2D.OverlapCircleAll(lowPoint.position, lowRange, enemyLayers);
+                enemiesHit = Physics2D.OverlapCircleAll(lowPoint.position,
+                                                        lowRange, enemyLayers);
             } else {
-                GameObject slash = Instantiate(highSlash, highOffset.position, highOffset.rotation);
+                GameObject slash = Instantiate(highSlash,
+                                               highOffset.position,
+                                               highOffset.rotation);
                 slash.transform.parent = transform;
                 // Detect enemies hit
-                enemiesHit = Physics2D.OverlapCircleAll(highPoint.position, highRange, enemyLayers);
+                enemiesHit = Physics2D.OverlapCircleAll(highPoint.position,
+                                                        highRange, enemyLayers);
             }
             // Trigger the animation unless the character is running on the ground
             if (!running || crouching || !grounded) {

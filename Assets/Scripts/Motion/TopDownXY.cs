@@ -45,16 +45,13 @@ public class TopDownXY : MonoBehaviour
         if (move.y > 0) {
             anim.SetInteger("Direction", (int)Direction.North);
             //print("Moving North: " + (int)Direction.North);
-        }
-        else if (move.y < 0) {
+        } else if (move.y < 0) {
             anim.SetInteger("Direction", (int)Direction.South);
             //print("Moving South: " + (int)Direction.South);
-        }
-        else if (move.x > 0) {
+        } else if (move.x > 0) {
             anim.SetInteger("Direction", (int)Direction.East);
             //print("Moving East: " + (int)Direction.East);
-        }
-        else if (move.x < 0) {
+        } else if (move.x < 0) {
             anim.SetInteger("Direction", (int)Direction.West);
             //print("Moving West: " + (int)Direction.West);
         }
