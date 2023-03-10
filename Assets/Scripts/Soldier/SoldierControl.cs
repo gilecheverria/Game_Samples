@@ -66,9 +66,11 @@ public class SoldierControl : MonoBehaviour
 
     void Rotation()
     {
+        // Get the mouse position in game world coordinates
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log("MousePos: " + mousePos);
+        // A vector in the direction where the player should be pointing
         direction = mousePos - rb2D.position;
+        // Get the angle, to apply it to the transformation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.localEulerAngles = new Vector3(0, 0, angle);
     }

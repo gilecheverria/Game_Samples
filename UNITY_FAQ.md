@@ -8,4 +8,4 @@
 
 ## Common problems
 
-- Collisions not detected
+- Collisions not detected: Check that colliders and RB correspond to 2D or 3D
