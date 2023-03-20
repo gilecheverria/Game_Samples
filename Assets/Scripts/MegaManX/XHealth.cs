@@ -7,7 +7,7 @@ Gilberto Echeverria
 
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class XHealth : MonoBehaviour
 {
     [SerializeField] float maxHP;
 

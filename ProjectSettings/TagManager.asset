@@ -9,6 +9,8 @@ TagManager:
   - Left
   - Right
   - Ground
+  - PlayerBullet
+  - Enemy
   layers:
   - Default
   - TransparentFX

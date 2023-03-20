@@ -9,6 +9,8 @@ Gilberto Echeverria
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent (typeof (NavMeshAgent))]
+
 public class AgentMotion : MonoBehaviour
 {
     [SerializeField] Transform target;
