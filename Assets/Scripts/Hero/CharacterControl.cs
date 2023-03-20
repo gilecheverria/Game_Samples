@@ -136,7 +136,7 @@ public class CharacterControl : MonoBehaviour
             // Detect enemies hit
             foreach (Collider2D enemy in enemiesHit) {
                 //print("Hit enemy: " + enemy.name);
-                enemy.GetComponent<Health>().TakeDamage(damage);
+                enemy.GetComponent<XHealth>().TakeDamage(damage);
             }
         }
     }

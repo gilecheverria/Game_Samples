@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TurnBattle.unity
     guid: a7b2e9efb127de738ad71b33f48f4834
   - enabled: 1
+    path: Assets/Scenes/TopDownShooter.unity
+    guid: c929d6bb053d65ffba24850a39b7ced1
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 882e846324e99d3d3bae703badfac00a
   m_configObjects: {}

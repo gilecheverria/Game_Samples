@@ -1,0 +1,3 @@
+[submodule "Assets/NavMeshPlus"]
+	path = Assets/NavMeshPlus
+	url = https://github.com/h8man/NavMeshPlus
