@@ -43,7 +43,7 @@ public class SoldierControl : MonoBehaviour
     {
         move.x = Input.GetAxis("Horizontal");
         move.y = Input.GetAxis("Vertical");
-        
+
         if (move.x != 0 || move.y != 0) {
             Walk();
         } else {
