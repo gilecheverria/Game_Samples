@@ -13,9 +13,11 @@ using UnityEngine.AI;
 
 public class AgentMotion : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] float searchDistance;
 
     NavMeshAgent nvAgent;
+    Vector3 initialPos;
+    Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +25,20 @@ public class AgentMotion : MonoBehaviour
         nvAgent = GetComponent<NavMeshAgent>();
         nvAgent.updateRotation = false;
         nvAgent.updateUpAxis = false;
+        // Store the position where the object was initialized
+        initialPos = transform.position;
+        // Find the player in the scene
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        nvAgent.destination = target.position;
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance < searchDistance) {
+            nvAgent.destination = player.position;
+        } else {
+            nvAgent.destination = initialPos;
+        }
     }
 }

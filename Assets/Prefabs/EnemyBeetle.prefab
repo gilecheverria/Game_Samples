@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac0fb20e08e56bcfa38ac0961a1da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  searchDistance: 6
 --- !u!114 &7848622473253537946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,3 +235,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
