@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SideScroller.unity
     guid: 70f772a0efa5fa6febb57889b5b78389
   - enabled: 1
+    path: Assets/Scenes/Pong.unity
+    guid: b0f6862f32e77e899a6384365dce15ea
+  - enabled: 1
     path: Assets/Scenes/TurnBattle.unity
     guid: a7b2e9efb127de738ad71b33f48f4834
   - enabled: 1
