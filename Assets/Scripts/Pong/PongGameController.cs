@@ -25,10 +25,22 @@ public class PongGameController : MonoBehaviour
 
     GameObject ball;
 
+    AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         StartCoroutine(WaitAndStartRound(0));
+    }
+
+    void Update()
+    {
+        // Reset the ball
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Destroy(ball);
+            StartCoroutine(WaitAndStartRound(1));
+        }
     }
 
     // Restart a game after a few seconds
@@ -36,12 +48,14 @@ public class PongGameController : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         ball = Instantiate(ballPrefab);
-        ball.GetComponent<Rigidbody2D>().velocity = Random.onUnitSphere * ballSpeed;
+        Vector2 direction = Random.onUnitSphere;
+        ball.GetComponent<Rigidbody2D>().velocity = direction.normalized * ballSpeed;
     }
 
     // Update the score for the players
     public void Score(int player)
     {
+        source.Play();
         if (player == 1) {
             score1++;
             if (score1 >= maxScore) {
