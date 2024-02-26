@@ -30,7 +30,9 @@ public class PongGameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get the component for the sound
         source = GetComponent<AudioSource>();
+        // Create the first ball
         StartCoroutine(WaitAndStartRound(0));
     }
 
@@ -55,7 +57,9 @@ public class PongGameController : MonoBehaviour
     // Update the score for the players
     public void Score(int player)
     {
+        // Sound to indicate a score
         source.Play();
+        // Update the points and display in the UI
         if (player == 1) {
             score1++;
             if (score1 >= maxScore) {

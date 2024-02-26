@@ -12,7 +12,10 @@ using UnityEngine;
 public class PaddleControl : MonoBehaviour
 {
     [SerializeField] float speed;
+    // Limit for the movement of the paddles
     [SerializeField] float limit;
+    // Keys that will be used to move each of the paddles
+    // Configured from the Unity Inspector
     [SerializeField] KeyCode upKey;
     [SerializeField] KeyCode downKey;
 
@@ -21,21 +24,11 @@ public class PaddleControl : MonoBehaviour
     {
         if (Input.GetKey(upKey) && transform.position.y < limit)
         {
-            MoveUp();
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
         if (Input.GetKey(downKey) && transform.position.y > -limit)
         {
-            MoveDown();
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
-    }
-
-    void MoveUp()
-    {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
-    }
-
-    void MoveDown()
-    {
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
 }

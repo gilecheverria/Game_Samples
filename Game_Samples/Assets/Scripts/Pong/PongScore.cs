@@ -17,16 +17,14 @@ public class PongScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get a reference to a script in another object
         gameController = GameObject.FindWithTag("GameController").GetComponent<PongGameController>();
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (side == 1) {
-            gameController.Score(1);
-        } else {
-            gameController.Score(2);
-        }
+        // Call a method in the other script
+        gameController.Score(side);
         Destroy(other.gameObject);
     }
 }
