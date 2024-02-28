@@ -37,7 +37,6 @@ public class ImageBlink : MonoBehaviour
         if(blinking) {
             if(elapsed <= duration) {
                 elapsed += Time.deltaTime;
-                // Adjust the value of the sine function to be in range 0-1
                 t = elapsed / duration;
                 image.color = Color.Lerp(baseColor, blinkColor, t);
             } else {
