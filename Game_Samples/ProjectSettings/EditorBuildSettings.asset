@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SideScroller.unity
     guid: 70f772a0efa5fa6febb57889b5b78389
   - enabled: 1
+    path: Assets/Scenes/BreakOut.unity
+    guid: 4971afebaac5e483d8e68a7372ca792b
+  - enabled: 1
     path: Assets/Scenes/Pong.unity
     guid: b0f6862f32e77e899a6384365dce15ea
   - enabled: 1

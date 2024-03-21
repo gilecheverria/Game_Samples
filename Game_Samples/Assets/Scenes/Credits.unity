@@ -442,34 +442,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sprites:
-
-    https://www.vhv.rs/viewpic/hobbmxx_transparent-mega-man-sprite-png-sprite-sheet-megaman/
-
-    https://opengameart.org/content/3-parallax-backgrounds
-
-    https://opengameart.org/content/hero-spritesheets-ars-notoria
-
-    https://opengameart.org/content/animated-top-down-survivor-player
-
-    https://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions
-
-    https://opengameart.org/content/star-vector
-
-
-    Sounds:
-
-    https://freesound.org/
-
-
-    Music:
-
-    https://studio.youtube.com/channel/UCaJvmw1nncovtj1lONOS39A/music
-
-
-    Fonts:
-
-    https://www.dafont.com/'
+  m_Text: "Sprites:\nhttps://www.vhv.rs/viewpic/hobbmxx_transparent-mega-man-sprite-png-sprite-sheet-megaman/\nhttps://opengameart.org/content/3-parallax-backgrounds\nhttps://opengameart.org/content/hero-spritesheets-ars-notoria\nhttps://opengameart.org/content/animated-top-down-survivor-player\nhttps://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions\nhttps://opengameart.org/content/star-vector\nSpike
+    ball: \xA9 2005-2013 Julien Jorge <julien.jorge@stuff-o-matic.com>\n\nSounds:\nhttps://freesound.org/\n\nMusic:\nhttps://studio.youtube.com/channel/UCaJvmw1nncovtj1lONOS39A/music\n\nFonts:\nhttps://www.dafont.com/"
 --- !u!222 &962827658
 CanvasRenderer:
   m_ObjectHideFlags: 0
