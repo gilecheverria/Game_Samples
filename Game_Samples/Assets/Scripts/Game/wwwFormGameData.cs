@@ -16,12 +16,12 @@ public class wwwFormGameData : MonoBehaviour
     // References for the scripts that hold the information to be inserted.
     [SerializeField] Points pointScript = null;
     DropBalls ballScript = null;
-    Timer timeScript = null;
+    BBGameController manager = null;
 
     private void Start()
     {
         ballScript = GetComponent<DropBalls>();
-        timeScript = GetComponent<Timer>();
+        manager = GetComponent<BBGameController>();
     }
 
     // We need to start a coroutine that calls the request
@@ -36,7 +36,7 @@ public class wwwFormGameData : MonoBehaviour
         form.AddField("numberBalls", ballScript.numberBalls.ToString());
         form.AddField("score", pointScript.score.ToString());
         form.AddField("accuracy", (pointScript.score / ballScript.numberBalls).ToString());
-        form.AddField("timeLimit", timeScript.timeLimit.ToString());
+        form.AddField("timeLimit", manager.timeLimit.ToString());
 
         Debug.Log(form);
 

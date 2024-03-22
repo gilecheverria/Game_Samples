@@ -13,12 +13,13 @@ public class GameReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Physics2D");
+        if (Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene("BasketBall");
         }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
+        if (Input.GetKeyDown(KeyCode.S)) {
+            SceneManager.LoadScene("Settings");
+        }
+        if (Input.GetKeyDown(KeyCode.M)) {
             SceneManager.LoadScene("Title");
         }
     }

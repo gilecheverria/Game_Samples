@@ -1,23 +1,22 @@
 ﻿/*
- * Count down from a given amount of seconds
- * Stop the game when the time runs out
- *
- * Gilberto Echeverria
- * 2021-03-23
- */
+Game controller for the Basket Ball game
+
+Keeps track of the time left in the game, using the settings stored as PlayerPrefs.
+ 
+Gilberto Echeverria
+2021-03-23
+*/
 
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class BBGameController : MonoBehaviour
 {
     // Variables visible from Unity
     [SerializeField] Text textTime;
     [SerializeField] Text textMessage;
     [SerializeField] GameObject gameOverPanel;
-
-    // Reference to another script
-    DropBalls dropper;
+    [SerializeField] GameObject obstacles;
 
     // This script is needed to start a coroutine that uploads the game data to the api.
     wwwFormGameData sendGameData;
@@ -25,15 +24,23 @@ public class Timer : MonoBehaviour
     int timer;
     public int timeLimit;
 
+    DropBalls dropper;
+
     void Start()
     {
-        // Get the value from another scene
+        // Get the value from the settings scene
         timer = PlayerPrefs.GetInt("TimeLimit");
+        if (PlayerPrefs.GetInt("Obstacles", 1) == 1) {
+            obstacles.SetActive(true);
+        } else {
+            obstacles.SetActive(false);
+        }
         // Initialize the display text
-        textTime.text = "Time: " + timer;
         timeLimit = timer;
-        dropper = GetComponent<DropBalls>();
+        textTime.text = "Time: " + timer;
         InvokeRepeating("CountDown", 1, 1);
+
+        dropper = GetComponent<DropBalls>();
 
         sendGameData = GetComponent<wwwFormGameData>();
     }
@@ -42,8 +49,7 @@ public class Timer : MonoBehaviour
     {
         timer--;
         textTime.text = "Time: " + timer;
-        if (timer == 0)
-        {
+        if (timer == 0) {
             GameOver();
         }
     }

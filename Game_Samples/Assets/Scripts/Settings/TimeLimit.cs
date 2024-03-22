@@ -1,5 +1,6 @@
 ﻿/*
 Adjust the time limit and store it in PlayerPrefs
+Also store the changes to the toggle for obstacles in the game
 
 Gilberto Echeverria
 2021-03-23
@@ -12,6 +13,7 @@ public class TimeLimit : MonoBehaviour
 {
     [SerializeField] InputField timeField;
     [SerializeField] public int timeLimit = 0;
+    [SerializeField] Toggle obstaclesToggle;
 
     int defaultTime = 5;
 
@@ -20,6 +22,11 @@ public class TimeLimit : MonoBehaviour
         // Recover a default value from player prefs
         timeLimit = PlayerPrefs.GetInt("TimeLimit", defaultTime);
         timeField.text = "" + timeLimit;
+
+        // Set the toggle value to what is currently stored in PlayerPrefs
+        obstaclesToggle.isOn = PlayerPrefs.GetInt("Obstacles", 1) == 1;
+        // Set a listener to the toggle to store the changes
+        obstaclesToggle.onValueChanged.AddListener((value) => UpdateObstacles(value));
     }
 
     // Callback for the plus and minus buttons
@@ -36,14 +43,20 @@ public class TimeLimit : MonoBehaviour
     public void ChangeLimit()
     {
         // Check if the input can be converted to int
-        if (int.TryParse(timeField.text, out timeLimit))
-        {
+        if (int.TryParse(timeField.text, out timeLimit)) {
             // Store the new value in the player prefs
             PlayerPrefs.SetInt("TimeLimit", timeLimit);
-        }
-        else
-        {
+        } else {
             timeLimit = defaultTime;
+        }
+    }
+
+    void UpdateObstacles(bool enabled)
+    {
+        if (enabled) {
+            PlayerPrefs.SetInt("Obstacles", 1);
+        } else {
+            PlayerPrefs.SetInt("Obstacles", 0);
         }
     }
 }
