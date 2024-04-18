@@ -37,4 +37,20 @@ public class XActions : MonoBehaviour
     {
         anim.SetTrigger("Hit");
     }
+
+    public void Jump()
+    {
+        anim.SetTrigger("Jump");
+    }
+
+    public void Run()
+    {
+        anim.SetBool("Run", true);
+        Invoke("StopRunning", 2.0f);
+    }
+
+    public void StopRunning()
+    {
+        anim.SetBool("Run", false);
+    }
 }

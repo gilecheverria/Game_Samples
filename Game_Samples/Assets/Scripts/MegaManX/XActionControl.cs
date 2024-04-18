@@ -7,7 +7,7 @@ Gilberto Echeverria
 
 using UnityEngine;
 
-public class XManualControl : MonoBehaviour
+public class XActionControl : MonoBehaviour
 {
     XActions xActions;
 
