@@ -53,15 +53,12 @@ public class SimonGameController : MonoBehaviour
     {
         for (int i=0; i<buttonCount; i++) {
             int id = i;
-            GameObject newButton = Instantiate(buttonPrefab, transform);
             // Make the buttons children of a panel with a grid layout
-            newButton.transform.SetParent(buttonParent);
+            GameObject newButton = Instantiate(buttonPrefab, buttonParent);
             // Set the callback for the buttons
             newButton.GetComponent<Button>().onClick.AddListener(delegate { CheckButton(id); });
-            // Set the sounds for the buttons
-            newButton.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>("Sounds/" + (id % 9));
-            // Change the color of the button
-            newButton.GetComponent<Image>().color = Color.HSVToRGB((float)id / buttonCount, 0.8f, 0.8f);
+            // Initialize the button
+            newButton.GetComponent<SimonButton>().Init(id, (float)id / buttonCount);
             // Store the button in the list
             buttonList.Add(newButton);
         }
@@ -82,7 +79,7 @@ public class SimonGameController : MonoBehaviour
     IEnumerator PlaySequence()
     {
         foreach (int index in buttonSequence) {
-            buttonList[index].GetComponentInChildren<ImageBlink>().Blink();
+            buttonList[index].GetComponentInChildren<SimonButton>().Blink();
             yield return new WaitForSeconds(soundDelay);
         }
         playerTurn = true;
@@ -94,7 +91,7 @@ public class SimonGameController : MonoBehaviour
     {
         if (playerTurn) {
             if (buttonID == buttonSequence[currentIndex]) {
-                buttonList[buttonID].GetComponentInChildren<ImageBlink>().Blink();
+                buttonList[buttonID].GetComponentInChildren<SimonButton>().Blink();
                 currentIndex++;
                 if (currentIndex == buttonSequence.Count) {
                     banner.text = "OK!";

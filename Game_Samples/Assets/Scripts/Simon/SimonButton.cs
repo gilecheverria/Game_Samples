@@ -9,7 +9,7 @@ Gilberto Echeverria
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImageBlink : MonoBehaviour
+public class SimonButton : MonoBehaviour
 {
     [SerializeField] Color blinkColor;
     [SerializeField] float duration;
@@ -21,14 +21,20 @@ public class ImageBlink : MonoBehaviour
     float t;
     bool blinking;
 
-    // Start is called before the first frame update
-    void Start()
+    // Set up the button based on its id
+    public void Init(int id, float hue)
     {
         // Initialize the required components
         image = GetComponent<Image>();
         audioSource = GetComponent<AudioSource>();
-        baseColor = image.color;
+
         blinking = false;
+
+        // Set the sounds for the buttons
+        audioSource.clip = Resources.Load<AudioClip>("Sounds/" + (id % 9));
+        // Change the color of the button
+        image.color = Color.HSVToRGB(hue, 0.8f, 0.8f);
+        baseColor = image.color;
     }
 
     // Update is called once per frame
